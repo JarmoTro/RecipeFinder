@@ -1,8 +1,24 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Home";
 }
 
+@model FormModel
+
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <form method="POST">
+        <h1 class="display-3">Hungry?</h1>
+        <h1 class="display-5">Quickly find a recipe to cook!</h1>
+        <partial for="Cuisine" name="_CuisineDropdown" />
+        <partial for="Intolerances" name="_Intolerances" />
+        <partial for="MealType" name="_MealTypes" />
+        <div class="input-group mb-3 mt-3">
+            <span class="input-group-text" id="maxCookingTime">Max expected cooking time in minutes</span>
+            <input asp-for="MaxCookingTime" type="number" class="form-control" placeholder="E.g. 120">
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text">Keyword</span>
+            <input asp-for="Keyword" type="text" class="form-control" name="keyword" placeholder="E.g. pasta">
+        </div>
+        <button type="submit" class="btn btn-outline-dark"><h4>SEARCH</h4></button>
+    </form>
 </div>

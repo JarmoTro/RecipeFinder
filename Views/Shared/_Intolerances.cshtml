@@ -1,0 +1,16 @@
+﻿<h1 class="display-6 m-3">Intolerances</h1>
+
+@{
+    String[] intolerances = { "Dairy", "Egg", "Gluten", "Grain", "Peanut", "Seafood", "Sesame", "Shellfish", "Soy", "Sulfite", "Tree nut", "Wheat" };
+}
+
+
+@{
+    foreach (String intolerance in intolerances)
+    {
+        <div class="form-check form-check-inline">
+            <input name="intolerances" class="form-check-input" type="checkbox" id="inlineCheckbox1" value="@intolerance">
+            <label class="form-check-label" for="inlineCheckbox1">@intolerance</label>
+        </div>
+    }
+}
