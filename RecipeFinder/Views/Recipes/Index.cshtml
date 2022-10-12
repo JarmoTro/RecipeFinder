@@ -1,0 +1,16 @@
+﻿@model IEnumerable<Recipe>
+
+@{
+    foreach(Recipe recipe in Model){
+        <form>
+
+        <input type="hidden" value="@recipe.Id"/>
+
+        <img src="@recipe.ImageSource"/>
+
+         <h1>@recipe.Title</h1>
+            
+        </form>
+        
+    }
+}

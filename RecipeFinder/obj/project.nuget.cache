@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "RNejzsEtClNeW6HV78QfjT8MyN05FpMH6874RGY5FnGQyPX6fbDKvtZdLGn8QlMDsVSoIaXOyAcejwb+XnZYIw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\jarmo\\Desktop\\RecipeFinder\\RecipeFinder\\RecipeFinder.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\jarmo\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

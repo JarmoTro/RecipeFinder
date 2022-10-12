@@ -1,0 +1,27 @@
+﻿@model FormModel
+
+<h1 class="display-6 m-3">Meal type</h1>
+
+@{
+    String[] mealTypes = { "Main course", "Side dish", "Dessert", "Appetizer",
+    "Salad", "Bread", "Breakfast", "Soup", "Beverage", "Sauce", "Marinade", "Fingerfood", "Snack", "Drink"};
+}
+
+<div class="form-check form-check-inline">
+    <input asp-for="MealType" class="form-check-input" type="radio" value="All types" name="MealType" id="flexRadioDefault" checked>
+    <label class="form-check-label" for="flexRadioDefault">
+        All types
+    </label>
+</div>
+
+@{
+    foreach (String mealType in mealTypes)
+    {
+        <div class="form-check form-check-inline">
+            <input asp-for="MealType" class="form-check-input" value="@mealType" type="radio" name="MealType" id="flexRadioDefault">
+            <label class="form-check-label" for="flexRadioDefault">
+                @mealType
+            </label>
+        </div>
+    }
+}
