@@ -1,4 +1,4 @@
-namespace RecipeFinder.Models
+﻿namespace RecipeFinder.Models
 {
     public class ErrorViewModel
     {

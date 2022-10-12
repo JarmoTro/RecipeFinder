@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Razor.TagHelpers;
 using Newtonsoft.Json;
 using RecipeFinder.Models;
 
@@ -55,7 +56,14 @@ namespace RecipeFinder.Controllers
 
                 var response = client.GetAsync(uri).Result;
 
+                Console.WriteLine(uriString);
+
                 dynamic dynamicJson = JsonConvert.DeserializeObject<dynamic>(response.Content.ReadAsStringAsync().Result);
+
+                if(dynamicJson.results.Count == 0)
+                {
+                    return View("notFound");
+                }
 
                 for (int i = 0; i < dynamicJson.results.Count; i++)
                 {
@@ -89,6 +97,8 @@ namespace RecipeFinder.Controllers
                 var response = client.GetAsync(uri).Result;
 
                 dynamic dynamicJson = JsonConvert.DeserializeObject<dynamic>(response.Content.ReadAsStringAsync().Result);
+
+                if(dynamicJson == null) return View("notFound");
 
                 recipe.ReadyInMinutes = dynamicJson.readyInMinutes;
 
