@@ -19,7 +19,7 @@ namespace RecipeFinder.Controllers
             formModel.Intolerances = intolerances;
             using (var client = new HttpClient())
             {
-                string uriString = "https://api.spoonacular.com/recipes/complexSearch?apiKey=" + _config["API_KEY"] + "&instructionsRequired=true&number=10";
+                string uriString = "https://api.spoonacular.com/recipes/complexSearch?apiKey=" + _config["API_KEY"] + "&instructionsRequired=true&number=12";
 
                 if (formModel.Intolerances.Length > 0)
                 {
