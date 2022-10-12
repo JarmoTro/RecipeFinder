@@ -5,7 +5,7 @@
 @model FormModel
 
 <div class="text-center">
-    <form method="POST">
+    <form method="POST" asp-controller="Recipes" asp-action="Index">
         <h1 class="display-3">Hungry?</h1>
         <h1 class="display-5">Quickly find a recipe to cook!</h1>
         <partial for="Cuisine" name="_CuisineDropdown" />
