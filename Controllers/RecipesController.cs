@@ -73,5 +73,53 @@ namespace RecipeFinder.Controllers
 
             return View(recipes);
         }
+
+        public IActionResult RecipeDetails(int recipeId)
+        {
+            Recipe recipe = new Recipe();
+
+            using (var client = new HttpClient())
+            {
+                string uriString = "https://api.spoonacular.com/recipes/" + recipeId + "/information?apiKey=" + _config["API_KEY"];
+
+                var uri = new Uri(uriString);
+
+                Console.WriteLine(uriString);
+
+                var response = client.GetAsync(uri).Result;
+
+                dynamic dynamicJson = JsonConvert.DeserializeObject<dynamic>(response.Content.ReadAsStringAsync().Result);
+
+                recipe.ReadyInMinutes = dynamicJson.readyInMinutes;
+
+                recipe.Instructions = dynamicJson.instructions;
+
+                recipe.ImageSource = dynamicJson.image;
+
+                recipe.Title = dynamicJson.title;
+
+                recipe.Id = dynamicJson.id;
+
+                recipe.SourceName = dynamicJson.sourceName;
+
+                recipe.Summary = dynamicJson.summary;
+
+                List<Ingredient> ingredients = new List<Ingredient>();
+
+                for (int i = 0; i < dynamicJson.extendedIngredients.Count; i++)
+                {
+                    Ingredient ingredient = new Ingredient();
+                    ingredient.ImageSource = dynamicJson.extendedIngredients[i].image;
+                    ingredient.Name = dynamicJson.extendedIngredients[i].name;
+                    ingredient.Quantity = $"{dynamicJson.extendedIngredients[i].amount} {dynamicJson.extendedIngredients[i].unit}";
+                    ingredients.Add(ingredient);
+                }
+
+                recipe.Ingredients = ingredients;
+
+            }
+
+            return View(recipe);
+        }
     }
 }

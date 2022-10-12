@@ -2,15 +2,20 @@
 
 @{
     foreach(Recipe recipe in Model){
-        <form>
+        <form asp-action="RecipeDetails" asp-controller="Recipes">
 
-        <input type="hidden" value="@recipe.Id"/>
+        <input type="hidden" name="recipeId" value="@recipe.Id"/>
+
+        <h1>@recipe.Title</h1>
 
         <img src="@recipe.ImageSource"/>
 
-         <h1>@recipe.Title</h1>
-            
+        <button type="submit" class="btn btn-primary m-3">Read more...</button>
+
+        <hr/>
+      
         </form>
+        
         
     }
 }
