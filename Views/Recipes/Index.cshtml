@@ -1,6 +1,10 @@
 ﻿@model IEnumerable<Recipe>
 
 @{
+    ViewData["Title"] = "Recipes";
+}
+
+@{
     foreach(Recipe recipe in Model){
     <form asp-action="RecipeDetails" class="d-inline-block" asp-controller="Recipes">
                 <input type="hidden" name="recipeId" value="@recipe.Id" />

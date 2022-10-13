@@ -1,6 +1,11 @@
 ﻿@model Recipe
 
 @{
+    ViewData["Title"] = Model.Title;
+}
+
+
+@{
     <div class="row">
         <div class="col">
             <h1 class="m-3">@Model.Title</h1>
