@@ -52,5 +52,25 @@ Spoonacular API https://spoonacular.com/food-api/
 
 ![Untitled](https://user-images.githubusercontent.com/82982361/195683093-bb9917e7-24d2-49e7-a24b-641e18f4a920.png)
 
+## Gallery
+
+### Main page
+
+![image](https://user-images.githubusercontent.com/82982361/197421836-dd82ca1f-94f1-4807-878b-180a5748c5cf.png)
+
+
+### Search results page
+
+![image](https://user-images.githubusercontent.com/82982361/197421829-ba4d341b-ae72-482c-b2ee-18dbcbac3064.png)
+
+
+### Recipe details page
+
+![image](https://user-images.githubusercontent.com/82982361/197421818-856a1b4c-6345-41b8-b9ff-37b11f76460b.png)
+
+
+### 404 page
+
+![image](https://user-images.githubusercontent.com/82982361/197421842-a283a9c2-a2af-4651-b938-561e97754ff4.png)
 
 
