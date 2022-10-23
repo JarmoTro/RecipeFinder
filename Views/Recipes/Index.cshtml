@@ -5,24 +5,18 @@
 }
 
 <div class="text-center">
-
 @{
-   
-    
     foreach(Recipe recipe in Model){
-    <form asp-action="RecipeDetails" class="d-inline-block" asp-controller="Recipes">
-                <input type="hidden" name="recipeId" value="@recipe.Id" />
-
-                <div class="card m-3" style="width: 18rem; height: 370px;">
-                    <img src="@recipe.ImageSource" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-text">@recipe.Title</h5>
-                    </div>
-                    <button type="submit" class="btn btn-primary mt-3">Read more...</button>
-                
+        <form asp-action="RecipeDetails" class="d-inline-block" asp-controller="Recipes">
+            <input type="hidden" name="recipeId" value="@recipe.Id" />
+            <div class="card m-3" style="width: 18rem; height: 370px;">
+                <img src="@recipe.ImageSource" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-text">@recipe.Title</h5>
                 </div>
-    </form>
+            <button type="submit" class="btn btn-primary mt-3">Read more...</button>       
+            </div>
+        </form>
     }
-    
 }
 </div>

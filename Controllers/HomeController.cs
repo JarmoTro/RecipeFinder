@@ -26,7 +26,7 @@ namespace RecipeFinder.Controllers
                 return View("notFound");
             }
 
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return Json("Looks like something went wrong. Contact the site administrators.");
         }
     }
 }
