@@ -6,6 +6,8 @@
 
 [Technologies used](#technologies-used)
 
+[Gallery](#gallery)
+
 [Configuring the application to run in your environment](#configuring-the-application-to-run-in-your-environment)
 
 ## What is a Recipe Finder?
